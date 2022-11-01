@@ -1,18 +1,14 @@
-// const express = require('express');
-// const app = express();
-// const PORT = process.env.PORT || '1312';
-// import conn from './db';
-// import { syncDb } from './db';
+const express = require('express');
+const app = express();
+import conn from './db';
+import { syncDb } from './db';
+import { init } from './main';
+const PORT = process.env.PORT || '1312';
 
-// const server = app.listen(PORT, () => console.log(`lisatening on port ${PORT}`));
-// console.log(server);
+const server = app.listen(PORT, () => console.log(`lisatening on port ${PORT}`));
 
-// // syncDb();
+init();
 
-// // setTimeout(() => {
-// server.close((err: object) => {
-//   if (err) console.log(`Error when closing server: ${err}`);
-//   console.log('server closed');
-//   process.exit(err ? 1 : 0);
-// });
-// // }, 2000);
+app.get('/', (req: any, res: any) => {
+  res.send('hello');
+});
