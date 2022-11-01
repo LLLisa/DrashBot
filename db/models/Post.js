@@ -1,5 +1,5 @@
-import Sequelize from 'sequelize';
-import conn from '../conn';
+const Sequelize = require('sequelize');
+const conn = require('../conn');
 
 const Post = conn.define('post', {
   title: {
@@ -10,4 +10,4 @@ const Post = conn.define('post', {
   },
 });
 
-export default Post;
+module.exports = Post;

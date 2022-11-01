@@ -1,11 +1,6 @@
-import { syncDb } from './db';
-import axios from 'axios';
-import * as dotenv from 'dotenv';
+const axios = require('axios');
+const dotenv = require('dotenv');
 dotenv.config();
-import { exec } from 'child_process';
-import fetch from 'node-fetch';
-
-// syncDb();
 
 const { REDDIT_USERNAME, REDDIT_PASSWORD, REDDIT_CLIENT_ID } = process.env;
 
@@ -32,7 +27,7 @@ const init = async () => {
   }
 };
 
-export { init };
+module.exports = { init };
 
 //curl -duser=USERNAME -dpasswd=PASSWORD -dapi_type=json https://ssl.reddit.com/api/login
 

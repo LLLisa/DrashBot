@@ -3,4 +3,4 @@ const conn = new Sequelize('postgres://localhost/drashbot', {
   logging: false,
 });
 
-export default conn;
+module.exports = conn;

@@ -1,7 +1,7 @@
-import conn from './conn';
-import { Post } from './models';
+const conn = require('./conn');
+const Post = require('./models');
 
-export const syncDb = async () => {
+const syncDb = async () => {
   try {
     await conn.sync({ force: true });
     await Post.create({
@@ -13,4 +13,4 @@ export const syncDb = async () => {
   }
 };
 
-export default conn;
+module.exports = conn;
